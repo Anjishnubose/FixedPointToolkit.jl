@@ -74,6 +74,9 @@ module Checkpointer
         return sc
     end
 
+    function test()
+        return 0
+    end
 
 
 end
