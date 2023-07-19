@@ -1,7 +1,7 @@
 name = "FixedPointToolkit"
 uuid = "081f7a28-ac82-48c1-a10e-fa8b3349a52a"
-authors = ["Anjishnu <anjishnubose98@gmail.com>"]
-version = "0.1.0"
+authors = ["Anjishnu Bose <anjishnubose98@gmail.com>", "Samuel Vadnais <samuel.vadnais@utoronto.ca>"]
+version = "1.0.0"
 
 [deps]
 JLD2 = "033835bb-8acc-5ee8-8aae-3f567f8a3819"
