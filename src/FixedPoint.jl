@@ -90,6 +90,17 @@ module FPoint
         SelfConsParams  =   checkpoint["Self-consistency params"]
         SC              =   ReCreateSelfCons(checkpoint, F, Update)
 
+        @info "Resuming..."
+        FixedPoint!(SC, fileName; SelfConsParams...)
+
+    end
+
+    function ContinueFixedPoint!(fileName::String, F::T, Update::R, SelfConsParams::Dict{Symbol, Real}) where {T<:Function, R<:Function}
+
+        checkpoint      =   read_checkpoint(fileName)
+        SC              =   ReCreateSelfCons(checkpoint, F, Update)
+
+        @info "Resuming ..."
         FixedPoint!(SC, fileName; SelfConsParams...)
 
     end

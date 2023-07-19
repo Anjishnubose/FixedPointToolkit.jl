@@ -34,6 +34,8 @@ module SelfConsistency
 
         SelfCons(F::T, Update::R, Initial::S ; F_args::Tuple = (), F_kwargs::Dict = Dict{Symbol, Any}(), Update_kwargs::Dict = Dict{Symbol, Any}()) where {T<:Function, R<:Function, S<:Union{Number, Vector{<:Number}}} = new{T, R, S}(F, F_args, F_kwargs, Initial, [Initial], [F(Initial, F_args... ; F_kwargs...)], Update, Update_kwargs)
 
+        SelfCons(F::T, F_args::Tuple, F_kwargs::Dict, Initial::S, VIns::Vector{S}, VOuts::Vector{S}, Update::R, Update_kwargs::Dict) where {T<:Function, R<:Function, S<:Union{Number, Vector{<:Number}}} = new{T, R, S}(F, F_args, F_kwargs, Initial, VIns, VOuts, Update, Update_kwargs)
+
     end
 
 end

@@ -69,13 +69,9 @@ module Checkpointer
     function ReCreateSelfCons(checkpoint::Dict, F::T, Update::R) :: SelfCons where {T<:Function, R<:Function}
 
         initial     =   checkpoint["inputs"][end]
-        sc          =   SelfCons{T, R, typeof(initial)}(F, checkpoint["function args"], checkpoint["function kwargs"], initial, checkpoint["inputs"], checkpoint["outputs"], Update, checkpoint["Update kwargs"])   
+        sc          =   SelfCons(F, checkpoint["function args"], checkpoint["function kwargs"], initial, checkpoint["inputs"], checkpoint["outputs"], Update, checkpoint["Update kwargs"])   
 
         return sc
-    end
-
-    function test()
-        return 0
     end
 
 
