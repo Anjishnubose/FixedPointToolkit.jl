@@ -1,0 +1,7 @@
+/Manifest.toml
+/docs/build/
+*.pdf
+*.jld2
+*.dat
+*.npz
+*-workspace
