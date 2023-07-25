@@ -9,8 +9,8 @@ module SelfConsistency
 `SelfCons{T<:Function, R<:Function, S<:Union{Number, Vector{<:Number}}}` is a data type representing a general function whose fixed point you want to calculate.
 
 # Attributes
-- `F               ::  T`: the function for which the fixed point needs to be calulcated.
-- `F_args          ::  Tuple`: a tuple of arguments held fixed for the function `F`.
+- `F               ::  T`: The function for which the fixed point needs to be calulcated.
+- `F_args          ::  Tuple`: A tuple of arguments held fixed for the function `F`.
 - `F_kwargs        ::  Dict{Symbol, Any}`: a dictionary of keyword arguments helf fixed for the function `F`.
 - `Initial         ::  S` : the initial guess to start the fixed point iteration.
 - `VIns            ::  Vector{S}`: the history of all the inputs used throughout the fixed point iteration.
