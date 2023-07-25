@@ -5,15 +5,15 @@ module Checkpointer
     using JLD2
 
 
-    @doc """
-	```julia
-	save_checkpoint(fileName::String, sc::SelfCons, SelfConsParams::Dict{Symbol, Real})
-	```
+@doc """
+```julia
+save_checkpoint(fileName::String, sc::SelfCons, SelfConsParams::Dict{Symbol, Real})
+```
 
-	Save the relevant attributed of a `SelfCons` data structure in a JLD2 file `fileName` (`fileName` must end with .jld2). 
-    Also saves some self-consistency parameters like maximum iteration, tolerance etc.
+Save the relevant attributed of a `SelfCons` data structure in a JLD2 file `fileName` (`fileName` must end with .jld2). 
+Also saves some self-consistency parameters like maximum iteration, tolerance etc.
 
-	"""
+"""
     function save_checkpoint(fileName::String, sc::SelfCons, SelfConsParams::Dict{Symbol, Real})
 
         jldopen( fileName , "w" ) do f 
@@ -27,14 +27,14 @@ module Checkpointer
     end
 
 
-    @doc """
-	```julia
-	read_checkpoint(fileName::String )
-	```
+@doc """
+```julia
+read_checkpoint(fileName::String )
+```
 
-	Read a JLD2 file `fileName` (`fileName` must end with .jld2) and return the checkpoint in the form of a dictionary. 
+Read a JLD2 file `fileName` (`fileName` must end with .jld2) and return the checkpoint in the form of a dictionary. 
 
-	"""
+"""
     function read_checkpoint(fileName::String )
 
         local F_args, F_kwargs, VIns, VOuts, Update_kwargs, SelfConsParams
@@ -58,14 +58,14 @@ module Checkpointer
     end
 
 
-    @doc """
-	```julia
-	ReCreateSelfCons(checkpoint::Dict, F::T, Update::R) :: SelfCons where {T<:Function, R<:Function}
-	```
+@doc """
+```julia
+ReCreateSelfCons(checkpoint::Dict, F::T, Update::R) :: SelfCons where {T<:Function, R<:Function}
+```
 
-	Return a `SelfCons` structure from a checkpoint dictionary and the function `F` and `Update` (which are not saved during checkpointing).
+Return a `SelfCons` structure from a checkpoint dictionary and the function `F` and `Update` (which are not saved during checkpointing).
 
-	"""
+"""
     function ReCreateSelfCons(checkpoint::Dict, F::T, Update::R) :: SelfCons where {T<:Function, R<:Function}
 
         initial     =   checkpoint["inputs"][end]

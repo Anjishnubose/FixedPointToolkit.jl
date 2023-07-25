@@ -8,16 +8,16 @@ module FPoint
     using Logging
 
 
-    @doc """
-	```julia
-	FixedPoint!(SC::SelfCons; tol::Float64=1e-6, max_iter::Int64=100) 
-    FixedPoint!(SC::SelfCons, fileName::String; tol::Float64=1e-6, max_iter::Int64=100, checkpoint_interval::Int64 = 10) 
-	```
+@doc """
+```julia
+FixedPoint!(SC::SelfCons; tol::Float64=1e-6, max_iter::Int64=100) 
+FixedPoint!(SC::SelfCons, fileName::String; tol::Float64=1e-6, max_iter::Int64=100, checkpoint_interval::Int64 = 10) 
+```
 
-	Runs a fixed point iteration on the `SelfCons` SC with a convergence tolerance of `tol` per input, and a maximum iteration cutoff of `max_iter`.
-    Optionally can also pass a `fileName` to checkpoint and save the results in. Can pass a kwarg `checkpoint_interval` to set the checkpoint frequency.
+Runs a fixed point iteration on the `SelfCons` SC with a convergence tolerance of `tol` per input, and a maximum iteration cutoff of `max_iter`.
+Optionally can also pass a `fileName` to checkpoint and save the results in. Can pass a kwarg `checkpoint_interval` to set the checkpoint frequency.
 
-	"""
+"""
     function FixedPoint!(SC::SelfCons; tol::Float64=1e-6, max_iter::Int64=100) 
 
         SelfConsParams  =   Dict(:iter => 0, :max_iter => max_iter)
@@ -76,14 +76,14 @@ module FPoint
     end
 
 
-    @doc """
-	```julia
-	ContinueFixedPoint!(fileName::String, F::T, Update::R) where {T<:Function, R<:Function}
-	```
+@doc """
+```julia
+ContinueFixedPoint!(fileName::String, F::T, Update::R) where {T<:Function, R<:Function}
+```
 
-	Reruns a fixed point iteration on the `SelfCons` reconstructed from the checkpoint saved in the JLD2 file `fileName`.
+Reruns a fixed point iteration on the `SelfCons` reconstructed from the checkpoint saved in the JLD2 file `fileName`.
 
-	"""
+"""
     function ContinueFixedPoint!(fileName::String, F::T, Update::R) where {T<:Function, R<:Function}
 
         checkpoint      =   read_checkpoint(fileName)
