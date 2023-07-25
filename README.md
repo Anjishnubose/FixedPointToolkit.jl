@@ -1,5 +1,7 @@
 # FixedPointToolkit.jl
 
+[![Build Status](https://github.com/Anjishnubose/FixedPointToolkit.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/Anjishnubose/FixedPointToolkit.jl/actions/workflows/CI.yml?query=branch%3Amain)
+
 FixedPointToolkit.jl is a Julia package meant for calculating fixed points of any scalar or vector functions, or equivalently, solve some system of self-consistent equations.
 
 Currently supported :
