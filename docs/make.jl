@@ -1,7 +1,5 @@
 using Documenter
-# using FixedPointToolkit
-include("../src/FixedPointToolkit.jl")
-using .FixedPointToolkit
+using FixedPointToolkit
 
 makedocs(
     build       =   "build" ,
@@ -19,7 +17,7 @@ makedocs(
     ]
 )
 
-# deploydocs(
-#     repo = "github.com/Anjishnubose/FixedPointToolkit.jl.git",
-#     devbranch = "main"
-# )
+deploydocs(
+    repo = "github.com/Anjishnubose/FixedPointToolkit.jl.git",
+    devbranch = "main"
+)

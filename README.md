@@ -1,5 +1,7 @@
 # FixedPointToolkit.jl
 
+[![Build Status](https://github.com/Anjishnubose/FixedPointToolkit.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/Anjishnubose/FixedPointToolkit.jl/actions/workflows/CI.yml?query=branch%3Amain)
+
 FixedPointToolkit.jl is a Julia package meant for calculating fixed points of any scalar or vector functions, or equivalently, solve some system of self-consistent equations.
 
 Currently supported :
@@ -9,3 +11,6 @@ Currently supported :
 * Can allow for different kinds of scheduling where the step-size in parameter space during the iterations changes. Right now supports Quadratic and Exponential scheduling, but can also support custom user-defined scheduler as well.
 * Can checkpoint and save results into JLD2 files, and resume iterations from reading such files.
 * Can plot results of inputs, outputs, and convergence as a function of iterations.
+
+## Documentation
+For further details, please refer to [Documentation](https://anjishnubose.github.io/FixedPointToolkit.jl/)
