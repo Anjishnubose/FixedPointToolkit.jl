@@ -93,6 +93,7 @@ Reruns a fixed point iteration on the `SelfCons` reconstructed from the checkpoi
         @info "Resuming..."
         FixedPoint!(SC, fileName; SelfConsParams...)
 
+        return SC
     end
 
     function ContinueFixedPoint!(fileName::String, F::T, Update::R, SelfConsParams::Dict{Symbol, Real}) where {T<:Function, R<:Function}
@@ -103,6 +104,7 @@ Reruns a fixed point iteration on the `SelfCons` reconstructed from the checkpoi
         @info "Resuming ..."
         FixedPoint!(SC, fileName; SelfConsParams...)
 
+        return SC
     end
 
 
