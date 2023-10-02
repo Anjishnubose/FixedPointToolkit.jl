@@ -29,7 +29,10 @@ Optionally can also pass a `fileName` to checkpoint and save the results in. Can
 
             updates =   SC.Update(SC.VIns[end], SC.VOuts[end], SC.F ; F_args = SC.F_args, F_kwargs = SC.F_kwargs, SC.Update_kwargs..., SelfConsParams...)
 
-            SC.Update_kwargs  =   updates["kwargs"]
+            SC.Update_kwargs  =   get(updates, "kwargs", SC.Update_kwargs)
+            SC.F_args         =   get(updates, "F_args", SC.F_args)
+            SC.F_kwargs       =   get(updates, "F_kwargs", SC.F_kwargs)
+
             push!(SC.VIns, updates["VInNext"])
             push!(SC.VOuts, updates["VOutNext"])
 
@@ -53,7 +56,10 @@ Optionally can also pass a `fileName` to checkpoint and save the results in. Can
 
             updates =   SC.Update(SC.VIns[end], SC.VOuts[end], SC.F ; F_args = SC.F_args, F_kwargs = SC.F_kwargs, SC.Update_kwargs..., SelfConsParams...)
 
-            SC.Update_kwargs  =   updates["kwargs"]
+            SC.Update_kwargs  =   get(updates, "kwargs", SC.Update_kwargs)
+            SC.F_args         =   get(updates, "F_args", SC.F_args)
+            SC.F_kwargs       =   get(updates, "F_kwargs", SC.F_kwargs)
+
             push!(SC.VIns, updates["VInNext"])
             push!(SC.VOuts, updates["VOutNext"])
 
